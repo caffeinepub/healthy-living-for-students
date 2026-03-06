@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Figtree - Body font */
+@font-face {
+  font-family: "Figtree";
+  src: url("/assets/fonts/Figtree.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bricolage Grotesque - Display font */
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/assets/fonts/BricolageGrotesque.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 1rem;
+
+    /* Brand colors - bright, child-friendly */
+    --background: 0.98 0.005 90;
+    --foreground: 0.22 0.04 260;
+    --card: 1 0 0;
+    --card-foreground: 0.22 0.04 260;
+    --popover: 1 0 0;
+    --popover-foreground: 0.22 0.04 260;
+
+    /* Primary: vibrant green */
+    --primary: 0.62 0.19 145;
+    --primary-foreground: 1 0 0;
+
+    /* Secondary: sunny yellow */
+    --secondary: 0.88 0.16 95;
+    --secondary-foreground: 0.25 0.05 60;
+
+    /* Muted: soft cream */
+    --muted: 0.96 0.02 90;
+    --muted-foreground: 0.52 0.04 260;
+
+    /* Accent: bright orange */
+    --accent: 0.75 0.17 55;
+    --accent-foreground: 1 0 0;
+
+    /* Destructive */
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    /* Border */
+    --border: 0.9 0.02 260;
+    --input: 0.9 0.02 260;
+    --ring: 0.62 0.19 145;
+
+    /* Charts */
+    --chart-1: 0.62 0.19 145;
+    --chart-2: 0.75 0.17 55;
+    --chart-3: 0.66 0.2 300;
+    --chart-4: 0.7 0.18 200;
+    --chart-5: 0.88 0.16 95;
+
+    /* Sidebar */
+    --sidebar: 0.98 0.005 90;
+    --sidebar-foreground: 0.22 0.04 260;
+    --sidebar-primary: 0.62 0.19 145;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.88 0.16 95;
+    --sidebar-accent-foreground: 0.25 0.05 60;
+    --sidebar-border: 0.9 0.02 260;
+    --sidebar-ring: 0.62 0.19 145;
+
+    /* Custom brand tokens */
+    --green: 0.62 0.19 145;
+    --yellow: 0.88 0.16 95;
+    --orange: 0.75 0.17 55;
+    --pink: 0.72 0.18 340;
+    --purple: 0.66 0.2 300;
+    --blue: 0.7 0.18 240;
+    --teal: 0.72 0.18 185;
+    --red: 0.62 0.22 27;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Figtree", sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Bricolage Grotesque", sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Bricolage Grotesque", sans-serif;
+  }
+
+  .font-body {
+    font-family: "Figtree", sans-serif;
+  }
+
+  /* Gradient text utility */
+  .gradient-text-green {
+    background: linear-gradient(135deg, oklch(0.62 0.19 145), oklch(0.7 0.18 185));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text-brand {
+    background: linear-gradient(135deg, oklch(0.62 0.19 145), oklch(0.75 0.17 55), oklch(0.72 0.18 340));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Fun gradient backgrounds */
+  .bg-hero-gradient {
+    background: linear-gradient(135deg, oklch(0.88 0.14 140), oklch(0.92 0.16 95), oklch(0.88 0.12 70));
+  }
+
+  .bg-food-gradient {
+    background: linear-gradient(135deg, oklch(0.88 0.15 145), oklch(0.85 0.14 100));
+  }
+
+  .bg-exercise-gradient {
+    background: linear-gradient(135deg, oklch(0.82 0.14 220), oklch(0.88 0.14 185));
+  }
+
+  .bg-mental-gradient {
+    background: linear-gradient(135deg, oklch(0.88 0.1 290), oklch(0.88 0.1 220));
+  }
+
+  .bg-routine-gradient {
+    background: linear-gradient(135deg, oklch(0.88 0.14 55), oklch(0.88 0.14 95));
+  }
+
+  /* Card hover glow */
+  .card-hover {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px -8px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Wavy underline decoration */
+  .wavy-underline {
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: oklch(0.75 0.17 55);
+    text-underline-offset: 4px;
+  }
+}
